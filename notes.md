@@ -49,9 +49,11 @@ final int MAX_SCORE = 100;
 ## Primitive Types 
 Primitive types have no methods. 
 
-![Java Primitive Types](images/JavaPrimitiveTypes.png)
+![Java Primitive Types](images/JavaPrimitiveTypes.png) 
 
 Each primitive type has a wrapper classes with methods. 
+
+![Java Wrapper Types](images/JavaWrapperTypes.png) 
 
 ```java 
 int heightA = 180; 
