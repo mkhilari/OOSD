@@ -144,7 +144,7 @@ class Circle {
 ```
 
 ## Static vs Instance 
-**Static** attributes and methods belong to a class, and are shared by all instances of the class. 
+**Static** attributes and methods belong to the class, and are shared by all instances of the class. 
 
 **Instance** attributes and methods are unique to each instance of a class. 
 
@@ -156,6 +156,9 @@ class Circle {
     private double radius;
 }
 ```
+
+## Static Methods 
+All methods independent of instance variables should be static. 
 
 ## Constructors 
 A constructor is an instance method that initialises an object. 
@@ -225,6 +228,23 @@ class Circle {
 }
 ``` 
 
+# Standard Methods 
+All classes inherit the **Object** class, with methods 
+* equals 
+* toString 
+
+```java 
+class Object {
+    public boolean equals(T other) {
+        return <isEqual>; 
+    }
+
+    public String toString() {
+        return <aString>; 
+    }
+}
+``` 
+
 # Privacy 
 ## Privacy Levels 
 **Private** attributes and methods can only be used in the same class. 
@@ -243,3 +263,4 @@ An object is **mutable** if its attributes can be changed (mutated) after initia
 An object is **immutable** if it has 
 * only private attribues 
 * no setters 
+
