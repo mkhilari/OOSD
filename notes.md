@@ -262,7 +262,7 @@ class Circle {
         numCircles += 1;
 
         // Independent copy of referenced object 
-        this.center = new Point(aCircle.center.x, aCircle.center.y); 
+        this.center = new Point(aCircle.center); 
 
         this.radius = aCircle.radius; 
     }
