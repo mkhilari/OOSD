@@ -245,6 +245,30 @@ class Object {
 }
 ``` 
 
+## Copy Constructors 
+A copy constructor takes an object as input, and creates an independent copy of the object. 
+
+If instance attributes **reference** other objects, independent copies of the referenced objects must also be created. 
+
+```java 
+class Circle {
+    private static int numCircles = 0; 
+
+    private Point center;
+    private double radius; 
+
+    // Copy constructor 
+    public Circle(Circle aCircle) {
+        numCircles += 1;
+
+        // Independent copy of referenced object 
+        this.center = new Point(aCircle.center.x, aCircle.center.y); 
+
+        this.radius = aCircle.radius; 
+    }
+}
+``` 
+
 # Privacy 
 ## Privacy Levels 
 **Private** attributes and methods can only be used in the same class. 
