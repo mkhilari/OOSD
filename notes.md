@@ -129,7 +129,12 @@ public static double product(double a, double b) {
 public static double product(int a, int b, int c) {
     return a * b * c;
 }
-```
+``` 
+
+## Overriding 
+Overriding is having a subclass method with the same name and arguments (same method signature) as a superclass method, but a different method body. 
+
+Subclasses can **override** superclass methods. 
 
 # Classes 
 A class is a type with attributes and methods. 
@@ -270,6 +275,11 @@ class Circle {
 ``` 
 
 # Privacy 
+## Information Hiding 
+Information hiding is making attributes and methods visible in their class, and invisible to external classes. 
+
+All **non final** attributes should be private. 
+
 ## Privacy Levels 
 **Private** attributes and methods can only be used in the same class. 
 
@@ -288,3 +298,97 @@ An object is **immutable** if it has
 * only private attribues 
 * no setters 
 
+# Inheritance 
+A subclass can **extend** a superclass. 
+
+The subclass inherits the attributes and methods of the superclass. 
+
+## Super 
+`super()` calls the constructor of the superclass. 
+
+`super.` allows for superclass member access. 
+
+```java 
+class Shape {
+    private Point center;
+
+    public Shape(Point center) {
+        this.center = center;
+    }
+
+    public double getArea() {
+        return 0;
+    }
+}
+
+class Circle extends Shape {
+    private double radius; 
+
+    public Circle(Point center, double radius) {
+        super(center); 
+
+        this.radius = radius; 
+    }
+
+    public double getArea() {
+        return Math.PI * radius * radius; 
+    }
+}
+``` 
+
+## Abstract Methods 
+Abstract methods are methods with no implementation (body). 
+
+Abstract methods must be overriden by a subclass to be used. 
+
+## Abstract Classes 
+Abstract classes have zero or more abstract methods. 
+
+Abstract classes have no instances. 
+
+# Interfaces 
+Interfaces are abstract classes with only 
+* static final attributes 
+* abstract methods 
+
+A subclass can **implement** an interface, and must override all abstract methods from the interface. 
+
+```java 
+interface Consumable {
+    
+    public void consume();
+}
+
+class WaterBottle implements Consumable {
+    private double volume; 
+
+    public WaterBottle(double volume) {
+        this.volume = volume;
+    }
+
+    // Override 
+    public void consume() {
+        this.volume = volume / 2;
+    }
+}
+``` 
+
+A sub interface can **extend** a super interface. 
+
+```java 
+interface Drinkable extends Consumable {
+
+    public void evaporate(); 
+}
+``` 
+
+## Comparable Interface 
+The comparable interface is a generic with method 
+* compareTo 
+
+```java 
+interface Comparable<T> {
+    
+    public int compareTo(T other);
+}
+``` 
