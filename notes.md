@@ -402,12 +402,22 @@ class Book<T> {
 }
 ``` 
 
-## Array 
+## Arrays 
+* Fixed size 
+* Manual resizing 
+
 ```java 
 int A[nA];
 ``` 
 
-## ArrayList 
+## ArrayLists 
+**Advantages** 
+* Automatic size increasing 
+* Insert, remove, update at any index 
+
+**Disadvantages** 
+* Manual size decreasing with `trimToSize()` 
+
 ```java 
 ArrayList<T> scores = new ArrayList<>();
 
