@@ -382,12 +382,37 @@ interface Drinkable extends Consumable {
 ``` 
 
 ## Comparable Interface 
-The comparable interface is a generic with method 
+The comparable interface is a generic class with method 
 * compareTo 
 
 ```java 
 interface Comparable<T> {
     
     public int compareTo(T other);
+}
+``` 
+
+# Generics 
+A generic is a class or method that takes a type parameter `T`. 
+
+```java 
+class Book<T> {
+    int numPages;
+    ArrayList<T> pages = new ArrayList<>();
+}
+``` 
+
+## Array 
+```java 
+int A[nA];
+``` 
+
+## ArrayList 
+```java 
+ArrayList<T> scores = new ArrayList<>();
+
+// ArrayList for each 
+for (T score : scores) {
+    // Use score 
 }
 ``` 
