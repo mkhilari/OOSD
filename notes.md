@@ -335,6 +335,23 @@ class Circle extends Shape {
 }
 ``` 
 
+## Upcasting 
+Upcasting is assigning a subclass object to a superclass variable. 
+
+```java 
+Shape aCircle = new Circle();
+``` 
+
+## Downcasting 
+Downcasting is explicitly **casting** a superclass variable, and assigning it to a subclass variable. 
+
+The superclass variable must reference an object of the subclass. 
+
+```java 
+Shape aCircle = new Circle();
+Circle sameCircle = (Circle) aCircle;
+``` 
+
 ## Abstract Methods 
 Abstract methods are methods with no implementation (body). 
 
