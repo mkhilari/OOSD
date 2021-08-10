@@ -443,3 +443,17 @@ for (T score : scores) {
     // Use score 
 }
 ``` 
+
+# OOSD Foundations 
+## Abstraction 
+Abstraction is use of classes as Abstract Data Types (ADT). 
+
+## Encapsulation 
+Information hiding is making the internal attributes and methods of a class invisible to external classes. 
+
+Encapsulation is control over access and mutation of class attributes through use of getters and setters. 
+
+## Polymorphism 
+Many forms. 
+
+## Inheritance 
