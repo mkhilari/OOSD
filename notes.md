@@ -273,6 +273,48 @@ class Object {
 }
 ``` 
 
+# Standard Input 
+A `scanner` can read input from `System.in`. 
+
+```java 
+Scanner s = new Scanner(System.in);
+```
+
+```java 
+// Returns current line and move to start of next line 
+System.out.println("Enter your name: ");
+String name = s.nextLine(); 
+``` 
+
+```java 
+// Returns next double and moves to end of double 
+System.out.println("Enter your height: ");
+Double height = s.nextDouble(); 
+
+// Returns rest of line and moves to start of next line 
+String restOfLine = s.nextLine();
+``` 
+
+# File Input 
+A `BufferedReader` can read a file. 
+
+```java 
+// Create new BufferedReader 
+BufferedReader br = new BufferedReader(new FileReader("foods.csv"));
+``` 
+
+```java 
+// Read file 
+String line = null;
+
+while ((line = br.readLine()) != null) {
+    // Split line 
+    String cells[] = line.split(",");
+
+    // Use line cells 
+}
+``` 
+
 # Privacy 
 ## Information Hiding 
 Information hiding is making attributes and methods visible in their class, and invisible to external classes. 
@@ -424,7 +466,7 @@ class Book<T> {
 * Manual resizing 
 
 ```java 
-int A[nA];
+Circle circles[] = new Circle[numCircles];
 ``` 
 
 ## ArrayLists 
