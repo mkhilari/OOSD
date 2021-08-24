@@ -381,6 +381,9 @@ class Circle extends Shape {
 }
 ``` 
 
+## Access Control 
+A subclass cannot increase the privacy of a superclass method. 
+
 ## Upcasting 
 Upcasting is assigning a subclass object to a superclass variable. 
 

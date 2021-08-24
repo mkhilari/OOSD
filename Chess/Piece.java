@@ -2,9 +2,9 @@ package Chess;
 
 public class Piece {
 
-    protected Board board;
-    protected int row;
-    protected int col;
+    private Board board;
+    private int row;
+    private int col;
 
     public Piece(Board board, int row, int col) {
         if (row > board.getNumRows() 

@@ -9,6 +9,6 @@ public class Rook extends Piece {
     public boolean isValidMove(int row, int col) {
         // Tests if row and col on same horizontal or vertical 
         return (super.isValidMove(row, col) 
-        && (this.row == row || this.col == col));
+        && (this.getRow()== row || this.getCol() == col));
     }
 }
