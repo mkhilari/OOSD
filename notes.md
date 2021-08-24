@@ -384,6 +384,17 @@ class Circle extends Shape {
 ## Access Control 
 A subclass cannot increase the privacy of a superclass method. 
 
+## Get Type 
+`getClass()` returns a class object. 
+
+`instanceof` returns true if an object is an instance of a class. 
+
+```java 
+aCircle.getClass();
+aCircle instanceof Circle == true; 
+``` 
+
+
 ## Upcasting 
 Upcasting is assigning a subclass object to a superclass variable. 
 
