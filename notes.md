@@ -342,7 +342,11 @@ An object is **immutable** if it has
 # Inheritance 
 A subclass can **extend** a superclass. 
 
-The subclass inherits the attributes and methods of the superclass. 
+The subclass inherits all 
+* public 
+* protected 
+
+attributes and methods of the superclass. 
 
 ## Super 
 `super()` calls the constructor of the superclass. 
