@@ -41,12 +41,15 @@ public class Piece {
         && col <= this.board.getNumCols());
     }
 
-    public void move(int row, int col) {
+    public boolean move(int row, int col) {
         if (!isValidMove(row, col)) {
-            return;
+            // Invalid move 
+            return false;
         }
 
         this.row = row;
         this.col = col;
+
+        return true;
     }
 }

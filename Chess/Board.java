@@ -29,4 +29,27 @@ public class Board {
     public void addPiece(Piece p) {
         this.pieces.add(p);
     }
+
+    public boolean move(int fromRow, int fromCol, int toRow, int toCol) {
+
+        Piece currPiece = null;
+
+        // Get piece at fromRow, fromCol 
+        for (Piece p : this.pieces) {
+            if (p.getRow() == fromRow
+            && p.getCol() == fromCol) {
+                // Piece found 
+                currPiece = p;
+                break;
+            }
+        }
+
+        if (currPiece == null) {
+            // Piece not found 
+            return false;
+        }
+
+        // Return true for move success 
+        return currPiece.move(toRow, toCol);
+    }
 }
