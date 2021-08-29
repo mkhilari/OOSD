@@ -459,7 +459,7 @@ interface Drinkable extends Consumable {
 ``` 
 
 ## Comparable Interface 
-The comparable interface is a generic class with method 
+The comparable interface is generic with method 
 * compareTo 
 
 ```java 
@@ -511,7 +511,7 @@ Abstraction is use of classes as Abstract Data Types (ADT).
 ## Encapsulation 
 Information hiding is making the internal attributes and methods of a class invisible to external classes. 
 
-Encapsulation is control over access and mutation of class attributes through use of getters and setters. 
+Encapsulation is grouping of attributes and methods in a single class, and control over access and mutation of class attributes through use of getters and setters. 
 
 ## Polymorphism 
 Many forms. 
