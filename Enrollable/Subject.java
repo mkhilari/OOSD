@@ -1,3 +1,5 @@
+package Enrollable;
+
 import java.util.ArrayList;
 
 public class Subject implements Comparable<Subject>, Enrollable<Student> {

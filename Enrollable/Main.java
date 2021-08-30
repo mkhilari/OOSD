@@ -1,3 +1,5 @@
+package Enrollable;
+
 import java.util.Arrays;
 
 public class Main {

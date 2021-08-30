@@ -1,4 +1,4 @@
-
+package Enrollable;
 
 public interface Enrollable<T> {
 

@@ -1,3 +1,5 @@
+package Enrollable;
+
 import java.util.ArrayList;
 
 public class Student implements Comparable<Student> {

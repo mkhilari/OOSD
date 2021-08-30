@@ -43,8 +43,10 @@ int age = 20;
 Constants can only be set once. 
 
 ```java 
-final int MAX_SCORE = 100;
+static final int MAX_SCORE = 100;
 ```
+
+A `final class` cannot be extended. 
 
 ## Primitive Types 
 Primitive types have no methods. 
