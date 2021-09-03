@@ -222,7 +222,7 @@ Circle circleA;
 The `new` keyword allocates memory for an object. 
 
 ```java 
-Circle circleA = new Circle(new Point(2, 3), 5);
+Circle aCircle = new Circle(new Point(2, 3), 5);
 ``` 
 
 ## Getters and Setters 
