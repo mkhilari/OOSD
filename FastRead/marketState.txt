@@ -1,0 +1,1 @@
+{"timestamp":0,"book":"AAPL","bids":[],"asks":[{"price":600,"volume":10}]}

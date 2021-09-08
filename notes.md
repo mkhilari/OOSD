@@ -446,17 +446,22 @@ class WaterBottle implements Consumable {
 
     // Override 
     public void consume() {
-        this.volume = volume / 2;
+        this.volume = this.volume / 2;
     }
 }
 ``` 
-
-A sub interface can **extend** a super interface. 
+A subclass can **implement** many interfaces. 
 
 ```java 
-interface Drinkable extends Consumable {
+class WaterBottle implements Drinkable, Evaporatable 
+``` 
 
-    public void evaporate(); 
+A sub interface can **extend** many super interfaces. 
+
+```java 
+interface Drinkable extends Consumable, Freezable {
+
+    public void drink(); 
 }
 ``` 
 

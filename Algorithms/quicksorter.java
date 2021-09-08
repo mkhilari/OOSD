@@ -1,36 +1,31 @@
 package Algorithms;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 
-public class quicksorter {
+public class Quicksorter {
+
     private ArrayList<Integer> A; 
 
-    public quicksorter(ArrayList<Integer> L) {
-        this.A = L;
+    public Quicksorter(ArrayList<Integer> A) {
+        this.A = A;
 
         System.out.println(this.A.toString());
-    }
-
-    public static void main(String[] args) {
-        ArrayList<Integer> L = new ArrayList<>(Arrays.asList(1, 3, 7, 4, 2, 3, 11)); 
-
-        quicksorter Q = new quicksorter(L);
-
-        Q.quicksort(0, L.size() - 1);
     }
 
     public void quicksort(int left, int right) {
+
         if (left >= right) {
+            
+            // A has length 1 
             return;
         }
 
-        int split = split(left, right);
+        int split = this.split(left, right);
 
         System.out.println(this.A.toString());
 
-        quicksort(left, split - 1);
-        quicksort(split + 1, right);
+        this.quicksort(left, split - 1);
+        this.quicksort(split + 1, right);
     }
 
     public int split(int left, int right) {
