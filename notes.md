@@ -524,3 +524,87 @@ Encapsulation is grouping of attributes and methods in a single class, and contr
 Many forms. 
 
 ## Inheritance 
+
+# UML Class Models 
+
+## Classes 
+A class has 
+* name 
+* attributes 
+* methods 
+
+## Class Attributes 
+A class attribute has 
+* name 
+* privacy (private -) 
+* static 
+* type (int) 
+* multiplicity (array length) 
+
+![Class Member Privacy](images/ClassMemberPrivacy.png) 
+
+## Class Methods 
+A class method has a 
+* name 
+* privacy (public +) 
+* static 
+* return type (void) 
+* parameters 
+
+![UML Class](images/UMLClass.png) 
+
+## Class Relationships 
+* Association 
+* Generalisation (`extends`) 
+* Realisation (`implements`) 
+* Dependency 
+
+## Association 
+A class having an external class as an attribute, through 
+* aggregation 
+* composition 
+
+Associations have a **multiplicity**. 
+
+![Student Course Association](images/StudentCourseAssociation.png) 
+
+* Student has 1 to 5 courses 
+* Course has 10 to 400 students 
+* Student has 1 student as a representative 
+
+## Aggregation 
+
+![UML Duck Pond](images/UMLDuckPond.png) 
+
+* Duck has 0 to 1 pond (duck does not require pond) 
+* Pond has 0 to many ducks 
+
+## Composition 
+
+![UML Department](images/UMLDepartment.png) 
+
+* Department has 1 university (department requires university) 
+
+## Generalisation 
+A subclass `extends` a superclass. 
+
+A superclass can be **abstract** (italic). 
+
+![UML Abstract Character](images/UMLAbstractCharacter.png) 
+
+* Player is a character (abstract class) 
+
+## Realisation 
+A class `implements` an interface. 
+
+![UML Interfaces](images/UMLInterfaces.png) 
+
+* Player is moveable and targetable (<\<interface\>>) 
+
+## Dependency 
+A class having an external class as a method parameter. 
+
+![UML Dependency](images/UMLDependency.png) 
+
+* Player has position as a method parameter 
+
