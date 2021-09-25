@@ -653,3 +653,65 @@ A class having an external class as a method parameter.
 * Player has position as a method parameter 
 
 # Design Patterns 
+A design pattern has 
+* intent 
+* motivation 
+* applicability 
+* structure (UML) 
+* participants (classes used) 
+* collaboration (between classes) 
+* consequences 
+* implementation 
+* known uses 
+
+A design pattern can be for object 
+* creation 
+* structure 
+* behaviour 
+
+## Singleton Classes 
+A singleton class has at most one instance. 
+
+```java 
+class Singleton {
+
+    private static Singleton theSingleton;
+
+    // Private constructor 
+    private Singleton() {
+        
+    }
+
+    // Singleton access 
+    public static Singleton getTheSingleton() {
+
+        if (theSingleton == null) {
+
+            // Create the singletion 
+            theSingleton = new Singleton();
+        }
+
+        return theSingleton;
+    }
+}
+``` 
+
+## Factory Methods 
+An abstract `creator` has an abstract `factoryMethod()` that returns an abstract `product`. 
+
+A `sub creator` can override the `factoryMethod()` to return a `sub product`. 
+
+```java 
+abstract class Product {}
+
+abstract class Factory {
+
+    public Product factoryMethod();
+}
+
+class Bomb extends Product {}
+
+class BombFactory {
+
+}
+``` 
