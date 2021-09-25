@@ -702,16 +702,23 @@ An abstract `creator` has an abstract `factoryMethod()` that returns an abstract
 A `sub creator` can override the `factoryMethod()` to return a `sub product`. 
 
 ```java 
-abstract class Product {}
+// Product 
+abstract class Player {}
 
-abstract class Factory {
+// Creator 
+abstract class Game {
 
-    public Product factoryMethod();
+    // Factory method 
+    public Player createPlayer();
 }
 
-class Bomb extends Product {}
+class RPGPlayer extends Player {}
 
-class BombFactory {
+class RPGGame extends Game {
 
+    public Player createPlayer() {
+
+        return new RPGPlayer();
+    }
 }
 ``` 
