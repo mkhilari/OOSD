@@ -486,6 +486,50 @@ class Book<T> {
 }
 ``` 
 
+## Collections 
+A collection is a set of elements. 
+
+```java 
+interface Collection<T> {
+
+    public int size();
+
+    public boolean add(T element);
+    public boolean remove(T element);
+
+    public boolean contains(T element);
+}
+``` 
+
+## Lists 
+A list is an indexed collection. 
+
+```java 
+interface List<T> extends Collection<T> {
+
+    public T get(int i);
+    public void set(int i, T element);
+}
+``` 
+
+## Maps 
+A map is a set of key value pairs. 
+
+```java 
+interface Map<K, V> {
+
+    public int size();
+
+    public boolean put(K key, V value);
+    public boolean remove(K key);
+
+    public boolean containsKey(K key);
+    public boolean containsValue(V value);
+
+    public V get(K key);
+}
+``` 
+
 ## Arrays 
 * Fixed size 
 * Manual resizing 
@@ -608,3 +652,4 @@ A class having an external class as a method parameter.
 
 * Player has position as a method parameter 
 
+# Design Patterns 
