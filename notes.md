@@ -697,9 +697,9 @@ class Singleton {
 ``` 
 
 ## Factory Methods 
-An abstract `creator` has an abstract `factoryMethod()` that returns an abstract `product`. 
+An abstract `creator` has an abstract factory method `createProduct()` that returns an abstract `product`. 
 
-A `sub creator` can override the `factoryMethod()` to return a `sub product`. 
+A `sub creator` can override `createProduct()` to return a `sub product`. 
 
 ```java 
 // Product 
@@ -719,6 +719,167 @@ class RPGGame extends Game {
     public Player createPlayer() {
 
         return new RPGPlayer();
+    }
+}
+``` 
+
+## Template Classes 
+An abstract `template` has a concrete `doAction()` that calls abstract helper methods. 
+
+A subclass can `extend` the `template` to use `doAction()`. 
+
+```java 
+// Template 
+abstract class Quicksorter {
+
+    protected int length;
+
+    // Actions 
+    public void quicksort(int left, int right) {
+        
+        if (left >= right) {
+            return;
+        }
+
+        int mid = this.split(left, right);
+        
+        this.quicksort(left, mid - 1);
+        this.quicksort(mid + 1, right);
+    }
+
+    public int split(int left, int right) {
+        // A[right] is pivot 
+
+        int finalIndex = left;
+
+        for (int i = left; i <= right; i++) {
+
+            if (this.compare(i, right) < 0) {
+
+                this.swap(i, finalIndex);
+                finalIndex += 1;
+            }
+        }
+
+        return finalIndex;
+    }
+
+    // Helper methods 
+    public int compare(int iA, int iB);
+    public void swap(int iA, int iB);
+}
+
+class IntQuicksorter extends Quicksorter {
+
+    private ArrayList<Integer> A;
+
+    public IntQuicksorter(ArrayList<Integer> A) {
+        
+        this.A = A;
+        this.length = A.size();
+    }
+
+    public ArrayList<Integer> getA() {
+        return this.A;
+    }
+
+    // Helper implementations 
+    public int compare(int iA, int iB) {
+
+        return Integer.compare(this.getA().get(iA), 
+        this.getA().get(iB));
+    }
+
+    public void swap(int iA, int iB) {
+
+        int swap = this.getA().get(iA);
+        this.getA().set(iA, this.getA().get(iB));
+        this.getA().set(iB, swap);
+    }
+}
+``` 
+
+## Strategy Interfaces 
+A `player` uses a `strategy` as an attribute. 
+
+The `strategy` interface is implemented by concrete strategies. 
+
+```java 
+// Player 
+class Player {
+
+    private Strategy strategy;
+
+    public Player(Strategy strategy) {
+        
+        this.strategy = strategy;
+    }
+
+    public void playStrategy() {
+
+        // Play strategy 
+    }
+}
+
+interface Strategy {
+    
+    public void attack();
+    public void move();
+}
+
+class StrategyA implements Strategy {
+
+    public void attack() {
+
+        // Implement attack 
+    }
+
+    public void move() {
+
+        // Implement move 
+    }
+}
+``` 
+
+
+## Observer Classes 
+An abstract `target` has a list of `observers`. 
+
+An interface `observer` responds to a change in state of the `target` with an abstract `update()`. 
+
+```java 
+// Target 
+abstract class Target {
+
+    private ArrayList<Observer> observers = new ArrayList<>();
+
+    private notifyObservers() {
+
+        // Update each observer 
+        for (Observer observer : this.observers) {
+
+            observer.update();
+        }
+    }
+
+    public ArrayList<Observer> getObservers() {
+        return this.observers;
+    }
+}
+
+// Observer 
+interface Observer {
+
+    public void update();
+}
+
+class Bus extends Target {} 
+
+class Person implements Observer {
+
+    public void update() {
+
+        // Implement update 
     }
 }
 ``` 
