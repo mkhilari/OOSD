@@ -883,3 +883,124 @@ class Person implements Observer {
     }
 }
 ``` 
+
+# Exceptions 
+An exception is thrown by a runtime error or an invalid state. 
+
+```java 
+class FrozenException extends Exception {
+
+    public FrozenException() {
+
+        super("A bit frozen, good luck drinking it");
+    }
+
+    public FrozenException(String message) {
+
+        super(message);
+    }
+}
+``` 
+
+## Checked Exceptions 
+Checked exceptions must be handled. 
+
+## Unchecked Exceptions 
+Unchecked exceptions may be left unhandled. 
+
+## Throwing Exceptions 
+Method signatures must include the exceptions they throw. 
+
+```java 
+public class Can implements Drinkable {
+    
+    private String name;
+    private double volume;
+    private double temperature;
+
+    public Can(String name, double volume, double temperature) {
+
+        this.name = name;
+        this.volume = volume;
+        this.temperature = temperature;
+    }
+
+    public Can(String name) {
+
+        this.name = name;
+        this.volume = DEFAULT_VOLUME;
+        this.temperature = DEFAULT_TEMPERATURE;
+    }
+
+    public String getName() {
+        return this.name;
+    }
+
+    public double getVolume() {
+        return this.volume;
+    }
+
+    public double getTemperature() {
+        return this.temperature;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setVolume(double volume) {
+        this.volume = volume;
+    }
+
+    public void setTemperature(double temperature) {
+        this.temperature = temperature;
+    }
+
+    // Exceptions thrown 
+    public void drink() throws FrozenException, Exception {
+
+        // Check temperature 
+        if (this.getTemperature() <= 0) {
+            throw new FrozenException();
+        }
+
+        if (this.getVolume() <= 0) {
+            throw new Exception("Can empty");
+        }
+
+        this.setVolume(0);
+        System.out.println("Drinkable drank");
+    }
+}
+``` 
+
+## Chaining Exceptions 
+Exceptions thrown by called methods must be handled. 
+
+```java 
+public class Main {
+
+    public static void main(String[] args) {
+
+        // Create can 
+        Can aCan = new Can("Monster Zero Ultra", 500, 10);
+
+        // Drink can 
+        try {
+            
+            aCan.drink();
+
+            aCan.setTemperature(-10);
+
+            aCan.drink();
+        } catch (FrozenException e) {
+            
+            System.out.println(e.getMessage());
+        } catch (Exception e) {
+
+            System.out.println(e.getMessage());
+        }
+    }
+}
+``` 
+
