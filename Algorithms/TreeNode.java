@@ -17,11 +17,26 @@ public class TreeNode<T> {
         root.setRight(new TreeNode<>(7));
         root.getLeft().setRight(new TreeNode<>(4));
 
+        // inOrder 
         ArrayList<TreeNode<Integer>> nodesInOrder = new ArrayList<>();
 
         root.inOrder(nodesInOrder);
 
         System.out.println(nodesInOrder.toString());
+
+        // preOrder 
+        ArrayList<TreeNode<Integer>> nodesPreOrder = new ArrayList<>();
+
+        root.preOrder(nodesPreOrder);
+
+        System.out.println(nodesPreOrder.toString());
+
+        // postOrder 
+        ArrayList<TreeNode<Integer>> nodesPostOrder = new ArrayList<>();
+
+        root.postOrder(nodesPostOrder);
+
+        System.out.println(nodesPostOrder.toString());
     }
 
     public TreeNode(T value) {
@@ -53,6 +68,10 @@ public class TreeNode<T> {
         this.right = right;
     }
 
+    public String toString() {
+        return this.getValue().toString();
+    }
+
     public void inOrder(ArrayList<TreeNode<T>> nodes) {
 
         if (this.getLeft() != null) {
@@ -67,7 +86,32 @@ public class TreeNode<T> {
         }
     }
 
-    public String toString() {
-        return this.value.toString();
+    public void preOrder(ArrayList<TreeNode<T>> nodes) {
+
+        // Visit curr first 
+        nodes.add(this);
+
+        if (this.getLeft() != null) {
+            this.getLeft().preOrder(nodes);
+        }
+
+        if (this.getRight() != null) {
+            this.getRight().preOrder(nodes);
+        }
     }
+
+    public void postOrder(ArrayList<TreeNode<T>> nodes) {
+
+        if (this.getLeft() != null) {
+            this.getLeft().postOrder(nodes);
+        }
+
+        if (this.getRight() != null) {
+            this.getRight().postOrder(nodes);
+        }
+
+        // Visit curr last 
+        nodes.add(this);
+    }
+
 }
