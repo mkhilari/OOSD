@@ -1,37 +1,100 @@
 package Test;
 
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashMap;
 
 public class Test {
 
     public static void main(String[] args) {
 
-        HashMap<String, Integer> personAge = new HashMap<>();
+        ArrayList<Integer> A = new ArrayList<>();
 
-        personAge.put("John", 30);
-        personAge.put("John", 45);
+        for (int i = 0; i < 5; i++) {
 
-        int x = personAge.get("John");
+            A.add(i, i);
+        }
 
-        System.out.println("x = " + x);
+        A.add(4, 0);
+
+        for (int a : A) {
+
+            System.out.print(a + " ");
+        }
+
+        System.out.println();
+
+        ArrayList<FighterJet> fighterJets = new ArrayList<>();
+
+        for (int i = 0; i < 5; i++) {
+
+            double speed = 300 + 80 * i;
+
+            FighterJet newFighterJet = new FighterJet(speed);
+
+            fighterJets.add(newFighterJet);
+        }
+
+        try {
+
+            fighterJets.get(0).Attack(fighterJets.get(3));
+        } catch (ExplosionException explosionException) {
+
+        } catch (DamageException damageException) {
+
+        } catch (Exception exception) {
+
+        }
     }
     
 }
 
-interface Drinkable {
+class FighterJet {
 
-    public int drink();
-}
+    private double speed;
 
-class Can implements Drinkable, Comparable<Drinkable> {
+    public FighterJet(double speed) {
 
-    public int drink() {
-        return 2;
+        this.speed = speed;
     }
 
-    public int compareTo(Drinkable other) {
-        return this.drink() - other.drink();
+    public double getSpeed() {
+        return this.speed;
+    }
+
+    public void setSpeed(double speed) {
+
+        // speed is >= 0 
+        this.speed = Math.max(0, speed);
+    }
+
+    public void Attack(FighterJet other) 
+    throws DamageException, ExplosionException {
+
+        // Attack other 
+    }
+}
+
+class DamageException extends Exception {
+
+    public DamageException() {
+
+        super("Damage taken");
+    }
+
+    public DamageException(String message) {
+
+        super(message);
+    }
+}
+
+class ExplosionException extends DamageException {
+
+    public ExplosionException() {
+        
+        super("An explosion exploded");
+    }
+
+    public ExplosionException(String message) {
+
+        super(message);
     }
 }

@@ -903,7 +903,7 @@ class FrozenException extends Exception {
 ``` 
 
 ## Checked Exceptions 
-Checked exceptions must be handled. 
+Checked exceptions must be handled before runtime. 
 
 ## Unchecked Exceptions 
 Unchecked exceptions may be left unhandled. 
