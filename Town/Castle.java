@@ -34,6 +34,4 @@ public class Castle {
     public void setKing(Royal king) {
         this.king = king;
     }
-
-
 }
