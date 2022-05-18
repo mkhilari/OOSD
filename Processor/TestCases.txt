@@ -1,0 +1,11 @@
+
+Test Case 1 
+Description: Ensure an invalid register index cannot be accessed. 
+Input: Construct a BIU and getPhysicalAddress with negative index (index = -5). 
+Output: Throw InvalidIndexException. 
+
+Test Case 2 
+Description: Ensure a negative value cannot be passed to add, 
+since add should increase at the register index, while subtract should decrease. 
+Input: Construct an EU and call add, passing a negative value (value = -20). 
+Output: Throw InvalidAddException. 

@@ -1,26 +1,33 @@
 package Test;
 
+import java.io.FileInputStream;
+import java.io.InputStream;
+import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Scanner;
+import java.util.stream.Collector;
+import java.util.stream.Collectors;
 
 public class Test {
 
+    private int n;
+
     public static void main(String[] args) {
 
-        ArrayList<Integer> A = new ArrayList<>();
+        List<Integer> A = new ArrayList<>();
 
         for (int i = 0; i < 5; i++) {
 
             A.add(i, i);
         }
 
-        A.add(4, 0);
+        A.remove(3);
 
-        for (int a : A) {
+        A.add(1, 2);
 
-            System.out.print(a + " ");
-        }
-
-        System.out.println();
+        System.out.println(A.size() + " " + A.get(2) + " " + A.get(3));
 
         ArrayList<FighterJet> fighterJets = new ArrayList<>();
 
@@ -35,7 +42,7 @@ public class Test {
 
         try {
 
-            fighterJets.get(0).Attack(fighterJets.get(3));
+            fighterJets.get(0).attack(fighterJets.get(3));
         } catch (ExplosionException explosionException) {
 
         } catch (DamageException damageException) {
@@ -66,7 +73,7 @@ class FighterJet {
         this.speed = Math.max(0, speed);
     }
 
-    public void Attack(FighterJet other) 
+    public void attack(FighterJet other) 
     throws DamageException, ExplosionException {
 
         // Attack other 
@@ -96,5 +103,20 @@ class ExplosionException extends DamageException {
     public ExplosionException(String message) {
 
         super(message);
+    }
+}
+
+class Dog {
+
+    int age;
+
+    public Dog() {
+
+        this(5);
+    }
+
+    public Dog(int age) {
+
+        this.age = age;
     }
 }

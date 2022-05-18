@@ -1,0 +1,10 @@
+
+Test Case 1 
+Description: Ensure a person cannot have negative age. 
+Input: Construct a person with negative age (age = -5). 
+Output: Throw InvalidAgeException. 
+
+Test Case 2 
+Description: Ensure a slave cannot have a negative cost. 
+Input: Construct a slave with negative cost (cost = -1000). 
+Output: Throw InvalidCostException. 
